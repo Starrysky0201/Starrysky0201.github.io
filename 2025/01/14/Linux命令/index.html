@@ -19,21 +19,21 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="Linux命令路径描述 Linux系统中，路径之间的层级关系使用：&#x2F;表示，根目录&#x2F; Windows系统中，路径直接的层级关系使用：\表示  命令通用格式 command [-options] [parameter]   command : 命令本身 -options : [可选，非必填]命里的一些选项，可以通过选项控制命里的行为细节 parameter : [可选，非必填]命里">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2025/01/14/hello-world/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2025/01/14/Linux%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Linux命令路径描述 Linux系统中，路径之间的层级关系使用：&#x2F;表示，根目录&#x2F; Windows系统中，路径直接的层级关系使用：\表示  命令通用格式 command [-options] [parameter]   command : 命令本身 -options : [可选，非必填]命里的一些选项，可以通过选项控制命里的行为细节 parameter : [可选，非必填]命里">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-01-14T12:05:34.008Z">
-<meta property="article:modified_time" content="2025-01-14T12:05:34.008Z">
+<meta property="article:published_time" content="2025-01-14T13:55:49.229Z">
+<meta property="article:modified_time" content="2025-01-10T07:06:51.237Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -210,7 +210,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-14 20:05" pubdate>
+        <time datetime="2025-01-14 21:55" pubdate>
           2025年1月14日 晚上
         </time>
       </span>
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 字
+          361 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -270,24 +270,88 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header"></h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <h1 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h1><h2 id="路径描述"><a href="#路径描述" class="headerlink" title="路径描述"></a>路径描述</h2><ul>
+<li>Linux系统中，路径之间的层级关系使用：&#x2F;表示，根目录&#x2F;</li>
+<li>Windows系统中，路径直接的层级关系使用：\表示</li>
+</ul>
+<h2 id="命令通用格式"><a href="#命令通用格式" class="headerlink" title="命令通用格式"></a>命令通用格式</h2><blockquote>
+<p>command [-options] [parameter]</p>
+</blockquote>
+<ul>
+<li>command : 命令本身</li>
+<li>-options : [可选，非必填]命里的一些选项，可以通过选项控制命里的行为细节</li>
+<li>parameter : [可选，非必填]命里的参数，多用于命令的指向目标等</li>
+</ul>
+<h2 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h2><blockquote>
+<p>语法：</p>
+<p>ls  [-a -l -h]   [Linux路径]</p>
+</blockquote>
+<ul>
+<li>-a	all的意思，列出全部文件（包含隐藏文件&#x2F;文件夹）</li>
+<li>-l         以列表的形式展示内容，显示更多信息</li>
+<li>-h        必须和-l搭配使用，列出文件大小，如K，M，G</li>
+</ul>
+<h2 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h2><blockquote>
+<p>全称（Change Directory）</p>
+<p>语法：</p>
+<p>cd [Linux路径]</p>
+</blockquote>
+<ul>
+<li>cd命令无需选项，只有参数，表示切换目录</li>
+<li>默认用户的HOME目录</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> / <span class="hljs-comment"># 根目录</span><br><span class="hljs-built_in">cd</span> home <br><span class="hljs-built_in">cd</span>   <span class="hljs-comment"># 跳转默认目录</span><br><span class="hljs-built_in">cd</span> - <span class="hljs-comment"># 跳转到刚才来的那个目录</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h2><blockquote>
+<p>全称（Print Work Directory）</p>
+<p>语法：</p>
+<p>pwd</p>
+</blockquote>
+<p>显示当前工作路径</p>
+<h2 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h2><blockquote>
+<p>全称：remove 命令用于删除一个文件或者目录</p>
+<p>语法</p>
+<p>rm [options] name…</p>
+</blockquote>
+<p>参数：</p>
+<ul>
+<li><code>-i</code> ：删除前逐一确认</li>
+<li><code>-f</code> ：即使原档案属性设为只读，亦直接删除，无需逐一确认</li>
+<li><code>-f</code> ：将目录及以下之档案亦逐一删除</li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd">rm -rf test/<br>rm -rf test.c<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h2><blockquote>
+<p>全称：make directory 命令用于创建目录。</p>
+<p>mkdir [-p] dirName</p>
+</blockquote>
+<p><strong>参数说明</strong>：</p>
+<ul>
+<li><code>-p</code> 确保目录名称存在，不存在的就建一个。</li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmd"># 例如<br><span class="hljs-built_in">mkdir</span> test.c<br><span class="hljs-built_in">mkdir</span> -p test<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 
               </div>
@@ -305,8 +369,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2025/01/14/hello-world/</div>
+      <div></div>
+      <div>http://example.com/2025/01/14/Linux命令/</div>
     </div>
     <div class="license-meta">
       
@@ -350,7 +414,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/14/Linux%E5%91%BD%E4%BB%A4/" title="">
+                      <a href="/2025/01/14/Vim/" title="">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
@@ -359,6 +423,12 @@
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2025/01/14/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
