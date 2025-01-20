@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数组 | 星空</title><meta name="author"><meta name="copyright"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="引言： 此文章作为对数组的补充和进阶内容。  数组 数组是由连续无空隙分配的，拥有特定元素类型的对象构成。 这些对象的数目数量（数组大小）在数组生态期间决不改变。  一、数组声明1. 语法 在数组声明的声明文法中，类型说明符的序列指定元素类型（必须是一个完整对象类型）。而声明符的形式为：  [ (static) (限定符) (表达式) ] 属性说明符序列 [ (限定符) (static) (表达">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="http://example.com/2025/01/17/%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:site_name" content="星空">
+<meta property="og:description" content="引言： 此文章作为对数组的补充和进阶内容。  数组 数组是由连续无空隙分配的，拥有特定元素类型的对象构成。 这些对象的数目数量（数组大小）在数组生态期间决不改变。  一、数组声明1. 语法 在数组声明的声明文法中，类型说明符的序列指定元素类型（必须是一个完整对象类型）。而声明符的形式为：  [ (static) (限定符) (表达式) ] 属性说明符序列 [ (限定符) (static) (表达">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/backround.jpg">
+<meta property="article:published_time" content="2025-01-17T04:41:15.000Z">
+<meta property="article:modified_time" content="2025-01-20T01:24:25.352Z">
+<meta property="article:tag" content="C语言">
+<meta property="article:tag" content="数组">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/backround.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "数组",
+  "url": "http://example.com/2025/01/17/%E6%95%B0%E7%BB%84/",
+  "image": "http://example.com/image/backround.jpg",
+  "datePublished": "2025-01-17T04:41:15.000Z",
+  "dateModified": "2025-01-20T01:24:25.352Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": null,
+      "url": "http://example.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/image/%E7%81%AB%E7%AE%AD2.png"><link rel="canonical" href="http://example.com/2025/01/17/%E6%95%B0%E7%BB%84/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数组',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/image/backround.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Git"><span> Git</span></a></li><li><a class="site-page child" href="/categories/Linux"><span> Linux</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/image/横幅.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/image/%E5%AE%87%E8%88%AA%E5%91%98.png" alt="Logo"><span class="site-name">星空</span></a><a class="nav-page-title" href="/"><span class="site-name">数组</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Git"><span> Git</span></a></li><li><a class="site-page child" href="/categories/Linux"><span> Linux</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">数组</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-17T04:41:15.000Z" title="发表于 2025-01-17 12:41:15">2025-01-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-20T01:24:25.352Z" title="更新于 2025-01-20 09:24:25">2025-01-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C%E8%AF%AD%E8%A8%80/">C语言</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p>引言：</p>
+<p>此文章作为对数组的补充和进阶内容。</p>
+</blockquote>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><blockquote>
+<p>数组是由连续无空隙分配的，拥有特定元素类型的对象构成。</p>
+<p>这些对象的数目数量（数组大小）在数组生态期间决不改变。</p>
+</blockquote>
+<h2 id="一、数组声明"><a href="#一、数组声明" class="headerlink" title="一、数组声明"></a>一、数组声明</h2><h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h3><blockquote>
+<p>在数组声明的声明文法中，类型说明符的序列指定元素类型（必须是一个完整对象类型）。而声明符的形式为：</p>
+<ul>
+<li>[ (static) (限定符) (表达式) ] 属性说明符序列</li>
+<li>[ (限定符) (static) (表达式) ] 属性说明符序列</li>
+<li>[ (限定符) * ] 属性说明符序列</li>
+</ul>
+<blockquote>
+<p>表达式 - 任何无逗号运算符的表到时，表明数组中的元素数量</p>
+<p>限定符 - <code>const</code>、<code>restrict</code>和<code>volatile</code>限定符的任意混合</p>
+<p>属性说明符序列 - (<code>C23</code>)可选的属性列表，应用到被声明的数组</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>注：未指定大小的<code>VLA</code>的声明符<strong>只能出现于函数原型作用域</strong></p>
+</blockquote>
+<h3 id="2-已知常量大小数组"><a href="#2-已知常量大小数组" class="headerlink" title="2. 已知常量大小数组"></a>2. 已知常量大小数组</h3><blockquote>
+<p>若数组声明符中的表达式为<strong>整数常量表达式</strong>，拥有大于零的值，且元素类型是一种拥有已知常量大小的类型（即元素不是<code>VLA</code>）。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n[<span class="number">10</span>]; <span class="comment">// 整数常量是常数表达式</span></span><br><span class="line"><span class="type">char</span> o[<span class="built_in">sizefo</span>(<span class="type">double</span>)]; <span class="comment">// sizeof是常量表达式</span></span><br><span class="line"><span class="keyword">enum</span> &#123;MAX_SZ = <span class="number">100</span>&#125;;</span><br><span class="line"><span class="type">int</span> n[MAX_SZ]; <span class="comment">// 枚举常量是常量表达式</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-非常量长度数组"><a href="#3-非常量长度数组" class="headerlink" title="3. 非常量长度数组"></a>3. 非常量长度数组</h3><blockquote>
+<p>若表达式不是<strong>整数常量表达式</strong>，则数组声明器声明一个非常量大小的数组<code>VLA</code>。</p>
+<p>每次控制流经过声明时，会求值表达式（而且它必须每次求值为大于零的值），然后分配数组（对应地，<code>VLA</code>的生存期在其声明离开作用域时结束）。</p>
+<p><code>VLA</code>实例的大小不会在其生存期中改变，但在另一次经过同一代码时，它可能被分配不同大小。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">	<span class="type">int</span> n = <span class="number">1</span>;</span><br><span class="line">label:;</span><br><span class="line">	<span class="type">int</span> a[n];<span class="comment">// 重分配10次，每次拥有不同大小（n）</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;The array has %zu elements\n&quot;</span>, <span class="keyword">sizeof</span> a / <span class="keyword">sizeof</span> *a);</span><br><span class="line">	<span class="keyword">if</span>(n++ &lt; <span class="number">10</span>)</span><br><span class="line">        <span class="keyword">goto</span> label; <span class="comment">// 离开作用域的VLA结束生存期</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>VLA</code>必须拥有自动或分配存储期。指向<code>VLA</code>的指针，但不是<code>VLA</code>自身亦可拥有静态存世期。<code>VM</code>类型不能拥有链接。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fvla</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> C[m][m])</span> <span class="comment">// OK ：块作用域/自动存储期到 VLA 的指针</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">typedef</span> <span class="type">int</span> VLA[m][m]; <span class="comment">// OK ：块作用域 VLA</span></span><br><span class="line">    <span class="type">int</span> D[m];              <span class="comment">// OK ：块作用域/自动存储期 VLA</span></span><br><span class="line"><span class="comment">//  static int E[m]; // 错误：静态存储期 VLA</span></span><br><span class="line"><span class="comment">//  extern int F[m]; // 错误：拥有链接的 VLA</span></span><br><span class="line">    <span class="built_in">int</span> (*s)[m];     <span class="comment">// OK：块作用域/自动存储期 VM</span></span><br><span class="line">    s = <span class="built_in">malloc</span>(m * <span class="built_in">sizeof</span>(<span class="type">int</span>)); <span class="comment">// OK：s 指向已分配存储中的 VLA</span></span><br><span class="line"><span class="comment">//  extern int (*r)[m]; // 错误：拥有链接的 VM</span></span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="title">int</span> <span class="params">(*q)</span>[m] </span>= &amp;B; <span class="comment">// OK：块作用域/静态存储期的 VM</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>可修改的类型不是结构体或联合体成员</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">tag</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> z[n]; <span class="comment">// 错误：VLA结构体成员</span></span><br><span class="line">    <span class="built_in">int</span> (*y)[n]; <span class="comment">// 错误：VM结构体成员</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-数组到指针转换"><a href="#4-数组到指针转换" class="headerlink" title="4. 数组到指针转换"></a>4. 数组到指针转换</h3><blockquote>
+<p>任何数据类型的左值表达式，当用于异于</p>
+<ul>
+<li>作为取地址运算符的操作数</li>
+<li>作为<code>sizeof</code>的操作数</li>
+<li>作为<code>typeof</code>和<code>typeof_unqual</code>的操作数（C23起）</li>
+<li>作为用于数组初始化的字符串字面量</li>
+</ul>
+<p>特定的语境时，会经历到指向其首元素指针的隐式转换。结果为非左值。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>* p = a;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%zu\n&quot;</span>, <span class="keyword">sizeof</span> a); <span class="comment">// 打印数组大小</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%zu\n&quot;</span>, <span class="keyword">sizeof</span> p); <span class="comment">// 打印指针大小</span></span><br><span class="line">---</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当数组类型用于函数参数列表时，它会转换成对应的指针类型：<code>int f(int a[2])</code>和<code>int f(int* a)</code>声明同一个函数。因为函数实际参数类型为指针类型，使用数组实参的函数调用会进行一个数组到指针转换；被调用函数无法获得实参数组的大小，必须显式传递：</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> sz)</span> <span class="comment">// 实际上声明 void f(int* a, int sz)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; sz; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a[i])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">g</span><span class="params">(<span class="type">int</span> (*a)[<span class="number">10</span>])</span> <span class="comment">// 不会对数组指针形参进行转换</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, (*a)[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a[<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">f</span>(a, <span class="number">10</span>); <span class="comment">// 转换成 int*，传递指针</span></span><br><span class="line">    <span class="built_in">g</span>(&amp;a); 	<span class="comment">// 传递指向数组的指针（无需传递其大小）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、数组定义"><a href="#二、数组定义" class="headerlink" title="二、数组定义"></a>二、数组定义</h2><blockquote>
+<p>初始化数组类型的对象时，初始化器必须是一个字符串字面量，或是一个花括号环绕的被初始化数组成员列表：</p>
+<ul>
+<li>&#x3D; 字符串字面量</li>
+<li>&#x3D; {表达式, … }</li>
+<li>&#x3D; {}</li>
+</ul>
+</blockquote>
+<h3 id="1-字符串初始化"><a href="#1-字符串初始化" class="headerlink" title="1. 字符串初始化"></a>1. 字符串初始化</h3><blockquote>
+<p>字符串字面量的连续字节，或宽字符串字面量的连续字符，包含空终止字节&#x2F;字符，会初始化数组的元素。</p>
+<p>若数组大小已知，则它可以比字符串字面量的大小少一，此情况下空终止字符被忽略：</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> str[] = <span class="string">&quot;abc&quot;</span>; <span class="comment">// str 拥有类型 char[4], 并保有&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;,&#x27;\0&#x27;</span></span><br><span class="line"><span class="type">char</span> str[<span class="number">3</span>] = <span class="string">&quot;abc&quot;</span>; <span class="comment">// str 拥有类型 char[3], 并保有&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-花括号环绕列表初始化"><a href="#2-花括号环绕列表初始化" class="headerlink" title="2. 花括号环绕列表初始化"></a>2. 花括号环绕列表初始化</h3><blockquote>
+<p>当数组以花括号环绕的初始化器列表初始化时，首个初始化器初始化序号为零的数组元素，而每个后继的初始化器所初始化的数组元素，序号比前一个初始化器所初始化的多一。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// int[3] 并保有 1,2,3</span></span><br><span class="line"><span class="type">int</span> y[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;<span class="comment">// int[5] 并保有 1,2,3,0,0</span></span><br><span class="line"><span class="type">int</span> z[<span class="number">4</span>] = &#123;<span class="number">1</span>&#125;; <span class="comment">// int[4] 并保有 1,0,0,0</span></span><br><span class="line"><span class="type">int</span> w[<span class="number">3</span>] = &#123;<span class="number">0</span>&#125;; <span class="comment">// int[3] 并保有全零</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>指派符导致接下来的初始化器初始化指派符所描述的数组元素。然后初始化以向前顺序持续，从指派符所描述元素的下一个元素开始。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n[<span class="number">5</span>] = &#123;[<span class="number">4</span>]=<span class="number">5</span>,[<span class="number">0</span>]=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;; <span class="comment">// 保有 1,2,3,4,5</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a[MAX] = &#123; <span class="comment">// 开始初始化 a[0] = 1, a[1] = 3, ...</span></span><br><span class="line">    <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, [MAX<span class="number">-5</span>] = <span class="number">8</span>, <span class="number">6</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">0</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com"></a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/01/17/%E6%95%B0%E7%BB%84/">http://example.com/2025/01/17/%E6%95%B0%E7%BB%84/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">星空</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E7%BB%84/">数组</a></div><div class="post-share"><div class="social-share" data-image="/image/backround.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E7%BB%84%E5%A3%B0%E6%98%8E"><span class="toc-number">1.1.</span> <span class="toc-text">一、数组声明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B7%B2%E7%9F%A5%E5%B8%B8%E9%87%8F%E5%A4%A7%E5%B0%8F%E6%95%B0%E7%BB%84"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 已知常量大小数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%9D%9E%E5%B8%B8%E9%87%8F%E9%95%BF%E5%BA%A6%E6%95%B0%E7%BB%84"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 非常量长度数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%95%B0%E7%BB%84%E5%88%B0%E6%8C%87%E9%92%88%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. 数组到指针转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E7%BB%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.</span> <span class="toc-text">二、数组定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 字符串初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%8A%B1%E6%8B%AC%E5%8F%B7%E7%8E%AF%E7%BB%95%E5%88%97%E8%A1%A8%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 花括号环绕列表初始化</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2025/1/1 - 2025 By null</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcom to my blog</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
